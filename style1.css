@@ -134,6 +134,11 @@ h3 {
 .no-button{
 	background-color: red;
 }
-.back{
+.countdown{
+	color: #fff;
+	font-size: 1.6em;
+	font-family: Arial;
+	border: none;
+	border-radius: 5px;
 	
 }
