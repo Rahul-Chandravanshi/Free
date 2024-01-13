@@ -158,3 +158,11 @@ p{
 .YouTube ,.instagram{
 	margin: 0 20px;
 }
+.countdown{
+	color: #fff;
+	font-size: 1.6em;
+	font-family: Arial;
+	border: none;
+	border-radius: 5px;
+	
+}
