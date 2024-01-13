@@ -18,7 +18,8 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 		
 	if (document.querySelectorAll('.boxMatch').length == emojis.length) {
 		//alert('Congratulations !, You Win');
-		showConfirm('Congratulations !, You Win')
+		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent,'Previous Level','index.html')
+		clearInterval(a);
 	}
 		}else {
 			document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen')
@@ -31,7 +32,7 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 	document.querySelector('.game').appendChild(box);
 };
 
-function showConfirm(message,callback){
+function showConfirm(message,callback,send){
 	var confirmBox = document.createElement('div');
 	confirmBox.classList.add('confirm-box');
 	var messageBox = document.createElement('div');
@@ -45,7 +46,7 @@ function showConfirm(message,callback){
 	
 	var yesButton = document.createElement('button');
 	yesButton.classList.add('yes-button');
-	yesButton.textContent = 'Previous Level';
+	yesButton.textContent = callback;
 	buttonBox.appendChild(yesButton);
 	yesButton.addEventListener('click',yesButtonClick);
 	
@@ -57,7 +58,7 @@ function showConfirm(message,callback){
 	noButton.addEventListener('click',noButtonClick);
 	
 	function yesButtonClick(){
-		window.location.href = 'index.html';
+		window.location.href = send;
 		removeConfirmBox();
 	}
 	function noButtonClick(){
@@ -72,3 +73,23 @@ function showConfirm(message,callback){
 	document.body.appendChild(confirmBox);
 };
 //showConfirm('Congratulations !, You Win');
+const startingMinutes = 5;
+let time = startingMinutes*60;
+
+let a = setInterval(updateCountdown,1000);
+function updateCountdown(){
+	const minutes = Math.floor(time/60);
+	let seconds = time%60;
+	seconds = seconds < 10 ? '0' + seconds : seconds;
+	timer.textContent = `${minutes}:${seconds}`;time--;
+	let stop = timer.textContent;
+	if (stop == '0:00') {
+		clearInterval(a);
+		showConfirm('Game Over !, You lose ☹️','Restart','level2.html')
+	}
+};
+
+//console.log();
+let timer = document.createElement('div');
+timer.classList.add('countdown');
+	document.querySelector('.watch').appendChild(timer);
