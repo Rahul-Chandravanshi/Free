@@ -4,12 +4,15 @@
 	box-sizing: border-box;
 	font-family: Monospace;
 }
-body {
-	display: flex;
+.fBox {
+display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: #1F0061;
+	background: #6400C4;
+}
+body{
+	background: #6400C4;
 }
 .container {
 	position: relative;
@@ -133,6 +136,27 @@ h3 {
 }
 .no-button{
 	background-color: red;
+}
+.contactUs {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+background-color: #4600C4;
+padding: 10px;
+color: #fff;
+}
+img{
+	margin-left: 20px;
+	width: 2em;
+	height: 2em;
+}
+p{
+	padding: 0 5px;
+	font-family: Arial;
+}
+.YouTube ,.instagram{
+	margin: 0 20px;
 }
 .countdown{
 	color: #fff;
