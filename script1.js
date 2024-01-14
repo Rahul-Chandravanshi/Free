@@ -18,7 +18,7 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 		
 	if (document.querySelectorAll('.boxMatch').length == emojis.length) {
 		//alert('Congratulations !, You Win');
-		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent,'Previous Level','index.html')
+		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent,'Next Level','level3.html')
 		clearInterval(a);
 	}
 		}else {
@@ -73,7 +73,7 @@ function showConfirm(message,callback,send){
 	document.body.appendChild(confirmBox);
 };
 //showConfirm('Congratulations !, You Win');
-const startingMinutes = 5;
+const startingMinutes = 4;
 let time = startingMinutes*60;
 
 let a = setInterval(updateCountdown,1000);
