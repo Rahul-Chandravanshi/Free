@@ -26,7 +26,7 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 		document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen')
 		}
 			}
-	}, 200);
+	}, 300);
 }
 	
 	document.querySelector('.game').appendChild(box);
