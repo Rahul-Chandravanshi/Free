@@ -18,7 +18,7 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 		
 	if (document.querySelectorAll('.boxMatch').length == emojis.length) {
 		//alert('Congratulations !, You Win');
-		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent,'Next Level','level2.html')
+		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent + " "+ ' Moves : ' + step,'Next Level','level2.html')
 		clearInterval(a);
 	}
 		}else {
@@ -73,6 +73,7 @@ function showConfirm(message,callback,send){
 	document.body.appendChild(confirmBox);
 };
 //showConfirm('Congratulations !, You Win');
+
 const startingMinutes = 5;
 let time = startingMinutes*60;
 
@@ -88,8 +89,22 @@ function updateCountdown(){
 		showConfirm('Game Over !, You lose ☹️','Restart','index.html')
 	}
 };
-
 //console.log();
 let timer = document.createElement('div');
 timer.classList.add('countdown');
 	document.querySelector('.watch').appendChild(timer);
+	//var clock = document.getElementById('min');
+	
+	//let t = clock.value;
+//clock.addEventListener('click',a);
+	//setMin();
+	let step = 0;
+	function moves(){
+		//step++;
+		step = step + 1;
+		//console.log(step);
+		count.textContent = `Moves : ${step}`
+	}
+	let count = document.createElement('div');
+	//count.classList.add('moves');
+	document.querySelector('.moves').appendChild(count);
