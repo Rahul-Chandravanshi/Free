@@ -18,7 +18,7 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 		
 	if (document.querySelectorAll('.boxMatch').length == emojis.length) {
 		//alert('Congratulations !, You Win');
-		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent,'Next Level','level3.html')
+		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent+ ' Moves : ' + step,'Next Level','level3.html')
 		clearInterval(a);
 	}
 		}else {
@@ -93,3 +93,13 @@ function updateCountdown(){
 let timer = document.createElement('div');
 timer.classList.add('countdown');
 	document.querySelector('.watch').appendChild(timer);
+	let step = 0;
+	function moves(){
+		//step++;
+		step = step + 1;
+		//console.log(step);
+		count.textContent = `Moves : ${step}`
+	}
+	let count = document.createElement('div');
+	//count.classList.add('moves');
+	document.querySelector('.moves').appendChild(count);
