@@ -76,7 +76,7 @@ function showConfirm(message,callback,send){
 let a;
 let timer;
 	var h;
-	const availableTime = ['Select ',8,4,2];
+	const availableTime = ['Select ',7,4,2];
 	var startingMinutes;
 	function setMin(text){
 		var selectBox = document.createElement('div');
