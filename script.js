@@ -35,6 +35,7 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 function showConfirm(message,callback,send){
 	var confirmBox = document.createElement('div');
 	confirmBox.classList.add('confirm-box');
+	
 	var messageBox = document.createElement('div');
 	messageBox.classList.add('message-box');
 	messageBox.textContent = message;
@@ -73,11 +74,52 @@ function showConfirm(message,callback,send){
 	document.body.appendChild(confirmBox);
 };
 //showConfirm('Congratulations !, You Win');
+let a;
+let timer;
+	var h;
+	const availableTime = ['Select ',2,5,10];
+	var startingMinutes;
+	function setMin(text){
+		var selectBox = document.createElement('div');
+	selectBox.classList.add('select-box');
+	var minBox = document.createElement('div');
+	minBox.classList.add('min-box');
+	minBox.textContent = text;
+	selectBox.appendChild(minBox);
+	var optionBox = document.createElement('div');
+	optionBox.classList.add('option-box');
+	minBox.appendChild(optionBox);
+	
+	var option = document.createElement('select');
+	option.classList.add('select-option');
+	//yesButton.textContent = callback;
+	optionBox.appendChild(option);
+	optionBox.addEventListener('change',removeSelectBox);
+	
+	
 
-const startingMinutes = 5;
+	
+
+	for (var i = 0; i < availableTime.length; i++) {
+		 h = document.createElement('option');
+		h.value = availableTime[i];
+		//console.log(h.value);
+		h.innerHTML = availableTime[i] + ' Min';
+		option.appendChild(h);
+		//console.log(i);
+
+	}
+	
+	optionBox.addEventListener('change',ok)
+	function ok(){
+		console.log('&');
+
+	
+	
+	startingMinutes = option.value;
 let time = startingMinutes*60;
 
-let a = setInterval(updateCountdown,1000);
+ a = setInterval(updateCountdown,1000);
 function updateCountdown(){
 	const minutes = Math.floor(time/60);
 	let seconds = time%60;
@@ -88,23 +130,28 @@ function updateCountdown(){
 		clearInterval(a);
 		showConfirm('Game Over !, You lose ☹️','Restart','index.html')
 	}
+
 };
-//console.log();
-let timer = document.createElement('div');
+	};
+ timer = document.createElement('div');
 timer.classList.add('countdown');
 	document.querySelector('.watch').appendChild(timer);
-	//var clock = document.getElementById('min');
 	
-	//let t = clock.value;
-//clock.addEventListener('click',a);
-	//setMin();
+	
+	
+		function removeSelectBox(){
+		document.body.removeChild(selectBox);
+	}
+	
+
+		document.body.appendChild(selectBox);
+	};
+	setMin('Set Time Out');
 	let step = 0;
 	function moves(){
-		//step++;
 		step = step + 1;
-		//console.log(step);
 		count.textContent = `Moves : ${step}`
-	}
+	};
 	let count = document.createElement('div');
-	//count.classList.add('moves');
 	document.querySelector('.moves').appendChild(count);
+	
