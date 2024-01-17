@@ -18,7 +18,7 @@ if (document.querySelectorAll('.boxOpen').length > 1) {
 		
 	if (document.querySelectorAll('.boxMatch').length == emojis.length) {
 		//alert('Congratulations !, You Win');
-		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent + ' Moves : ' + step,'Show Love','https://youtube.com/@Rahul.chandravanshi_0')
+		showConfirm('Congratulations !, You Win' + ' Time Left :  '+timer.textContent+ ' Moves : ' + step,'Show Love','https://youtube.com/@Rahul.chandravanshi_0')
 		clearInterval(a);
 	}
 		}else {
@@ -73,10 +73,52 @@ function showConfirm(message,callback,send){
 	document.body.appendChild(confirmBox);
 };
 //showConfirm('Congratulations !, You Win');
-const startingMinutes = 3.5;
+let a;
+let timer;
+	var h;
+	const availableTime = ['Select ',5,3,2];
+	var startingMinutes;
+	function setMin(text){
+		var selectBox = document.createElement('div');
+	selectBox.classList.add('select-box');
+	var minBox = document.createElement('div');
+	minBox.classList.add('min-box');
+	minBox.textContent = text;
+	selectBox.appendChild(minBox);
+	var optionBox = document.createElement('div');
+	optionBox.classList.add('option-box');
+	minBox.appendChild(optionBox);
+	
+	var option = document.createElement('select');
+	option.classList.add('select-option');
+	//yesButton.textContent = callback;
+	optionBox.appendChild(option);
+	optionBox.addEventListener('change',removeSelectBox);
+	
+	
+
+	
+
+	for (var i = 0; i < availableTime.length; i++) {
+		 h = document.createElement('option');
+		h.value = availableTime[i];
+		//console.log(h.value);
+		h.innerHTML = availableTime[i] + ' Min';
+		option.appendChild(h);
+		//console.log(i);
+
+	}
+	
+	optionBox.addEventListener('change',ok)
+	function ok(){
+		console.log('&');
+
+	
+	
+	startingMinutes = option.value;
 let time = startingMinutes*60;
 
-let a = setInterval(updateCountdown,1000);
+ a = setInterval(updateCountdown,1000);
 function updateCountdown(){
 	const minutes = Math.floor(time/60);
 	let seconds = time%60;
@@ -85,21 +127,30 @@ function updateCountdown(){
 	let stop = timer.textContent;
 	if (stop == '0:00') {
 		clearInterval(a);
-		showConfirm('Game Over !, You lose ☹️','Restart','level3.html')
+		showConfirm('Game Over !, You lose ☹️','Restart','index.html')
 	}
-};
 
-//console.log();
-let timer = document.createElement('div');
+};
+	};
+ timer = document.createElement('div');
 timer.classList.add('countdown');
 	document.querySelector('.watch').appendChild(timer);
-		let step = 0;
+	
+	
+	
+		function removeSelectBox(){
+		document.body.removeChild(selectBox);
+	}
+	
+
+		document.body.appendChild(selectBox);
+	};
+	setMin('Set Time Out');
+	let step = 0;
 	function moves(){
-		//step++;
 		step = step + 1;
-		//console.log(step);
 		count.textContent = `Moves : ${step}`
 	};
-let count = document.createElement('div');
-	//count.classList.add('moves');
+	let count = document.createElement('div');
 	document.querySelector('.moves').appendChild(count);
+	
