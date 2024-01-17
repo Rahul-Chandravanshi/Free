@@ -95,7 +95,7 @@ h3 {
 	transform: rotateY(180deg);
 }
 
-.confirm-box{
+.confirm-box, .select-box{
 	background: rgba(0,0,0,0.5);
 	width: 100%;
 	height: 100%;
@@ -108,7 +108,7 @@ h3 {
 	justify-content: center;
 	align-items: center;
 }
-.message-box {
+.message-box, .min-box{
 	gap: 10px;
 	background: #fff;
 	text-align: center;
@@ -119,7 +119,7 @@ h3 {
 	border-radius: 5px;
 	box-shadow: 0 0 10px rbga(0,0,0,0.5);
 }
-.button-box{
+.button-box, .option-box{
 	margin-top: 30px;
 }
 .yes-button, .no-button{
@@ -165,4 +165,14 @@ p{
 	border: none;
 	border-radius: 5px;
 	
+}
+.select-option{
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin: 0 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.5);
 }
