@@ -86,7 +86,8 @@ h3 {
 	position: absolute;
 	inset: 0;
 	background: #6400C4;
-	/*opacity: 0.5;*/
+	/*border: solid white 0.5px;
+	opacity: 0.5;*/
 	transition: 0.25s;
 	transform: rotateY(0deg);
 	backface-visibility: hidden;
@@ -95,7 +96,7 @@ h3 {
 	transform: rotateY(180deg);
 }
 
-.confirm-box, .select-box{
+.confirm-box, .select-box, .resume-box{
 	background: rgba(0,0,0,0.5);
 	width: 100%;
 	height: 100%;
@@ -110,7 +111,7 @@ h3 {
 	font-family: Arial;
 	font-weight: bold;
 }
-.message-box, .min-box{
+.message-box, .min-box, .title-box{
 	gap: 10px;
 	background: #fff;
 	text-align: center;
@@ -124,7 +125,7 @@ h3 {
 .button-box, .option-box{
 	margin-top: 30px;
 }
-.yes-button, .no-button{
+.yes-button, .no-button,.press-button{
 	color: #fff;
 	padding: 10px 20px;
 	font-size: 16px;
@@ -132,6 +133,10 @@ h3 {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+}
+.press-button{
+	
+	background-color: grey;
 }
 .yes-button{
 	background-color: green;
@@ -169,6 +174,7 @@ p{
 	
 }
 .select-option{
+	/*appearance: none;*/
 	color: #fff;
 	padding: 10px 20px;
 	font-size: 16px;
@@ -177,4 +183,29 @@ p{
 	border-radius: 5px;
 	cursor: pointer;
 	background-color: rgba(0,0,0,0.5);
+}
+select {
+	-webkit-appearance :none;
+	-moz-appearance :none;
+	appearance: none;
+}
+select option{
+		
+		color: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin: 0 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: red;
+	/*background-color: rgba(0,0,0,0.5);*/
+}
+.pause-button{
+	padding: 5px;
+	margin: 5px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
